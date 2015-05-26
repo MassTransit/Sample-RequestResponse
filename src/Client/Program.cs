@@ -8,7 +8,6 @@
     using log4net.Config;
     using MassTransit;
     using MassTransit.Log4NetIntegration.Logging;
-    using MassTransit.RabbitMqTransport.Configuration;
     using Sample.MessageTypes;
 
 
@@ -60,22 +59,18 @@
         {
             var serviceAddress = new Uri(ConfigurationManager.AppSettings["ServiceAddress"]);
             IRequestClient<ISimpleRequest, ISimpleResponse> client =
-                new MessageRequestClient<ISimpleRequest, ISimpleResponse>(busControl, serviceAddress,
-                    TimeSpan.FromSeconds(10));
+                busControl.CreateRequestClient<ISimpleRequest, ISimpleResponse>(serviceAddress, TimeSpan.FromSeconds(10));
 
             return client;
         }
 
         static IBusControl CreateBus()
         {
-            return Bus.Factory.CreateUsingRabbitMq(x =>
+            return Bus.Factory.CreateUsingRabbitMq(x => x.Host(new Uri(ConfigurationManager.AppSettings["RabbitMQHost"]), h =>
             {
-                IRabbitMqHost host = x.Host(new Uri(ConfigurationManager.AppSettings["RabbitMQHost"]), h =>
-                {
-                    h.Username("guest");
-                    h.Password("guest");
-                });
-            });
+                h.Username("guest");
+                h.Password("guest");
+            }));
         }
 
         static void ConfigureLogger()

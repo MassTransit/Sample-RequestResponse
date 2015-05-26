@@ -3,7 +3,7 @@
     using System;
     using System.Configuration;
     using MassTransit;
-    using MassTransit.RabbitMqTransport.Configuration;
+    using MassTransit.RabbitMqTransport;
     using Topshelf;
     using Topshelf.Logging;
 
@@ -29,10 +29,7 @@
                 });
 
                 x.ReceiveEndpoint(host, ConfigurationManager.AppSettings["ServiceQueueName"],
-                    e =>
-                    {
-                        e.Consumer<RequestConsumer>();
-                    });
+                    e => { e.Consumer<RequestConsumer>(); });
             });
 
             _log.Info("Starting bus...");
