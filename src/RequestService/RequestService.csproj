@@ -37,17 +37,17 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="MassTransit, Version=3.0.6.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MassTransit.3.0.6-alpha\lib\net45\MassTransit.dll</HintPath>
+    <Reference Include="MassTransit, Version=3.0.9.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.3.0.9-alpha\lib\net45\MassTransit.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="MassTransit.Log4NetIntegration, Version=3.0.6.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MassTransit.Log4Net.3.0.6-alpha\lib\net45\MassTransit.Log4NetIntegration.dll</HintPath>
+    <Reference Include="MassTransit.Log4NetIntegration, Version=3.0.9.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.Log4Net.3.0.9-alpha\lib\net45\MassTransit.Log4NetIntegration.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="MassTransit.RabbitMqTransport, Version=3.0.6.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MassTransit.RabbitMQ.3.0.6-alpha\lib\net45\MassTransit.RabbitMqTransport.dll</HintPath>
+    <Reference Include="MassTransit.RabbitMqTransport, Version=3.0.9.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.RabbitMQ.3.0.9-alpha\lib\net45\MassTransit.RabbitMqTransport.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NewId, Version=2.1.2.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
