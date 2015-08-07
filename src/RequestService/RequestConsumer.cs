@@ -13,7 +13,7 @@
 
         public async Task Consume(ConsumeContext<ISimpleRequest> context)
         {
-            _log.InfoFormat("Returning name for {0}", context.Message.CustomerId);
+            _log.InfoFormat("Returning name for {0}, {1}", context.Message.CustomerId, context.Headers.Get("Key", "None"));
 
             context.Respond(new SimpleResponse
             {
