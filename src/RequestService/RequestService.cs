@@ -14,7 +14,6 @@
         readonly LogWriter _log = HostLogger.Get<RequestService>();
 
         IBusControl _busControl;
-        BusHandle _busHandle;
 
         public bool Start(HostControl hostControl)
         {
@@ -34,7 +33,7 @@
 
             _log.Info("Starting bus...");
 
-            _busHandle = _busControl.Start();
+            _busControl.Start();
 
             return true;
         }
@@ -43,8 +42,7 @@
         {
             _log.Info("Stopping bus...");
 
-            if (_busHandle != null)
-                _busHandle.Stop(TimeSpan.FromSeconds(30));
+            _busControl?.Stop();
 
             return true;
         }

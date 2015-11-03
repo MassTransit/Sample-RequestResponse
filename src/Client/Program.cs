@@ -22,7 +22,7 @@
 
             IBusControl busControl = CreateBus();
 
-            BusHandle busHandle = busControl.Start();
+            busControl.Start();
 
             try
             {
@@ -50,7 +50,7 @@
             }
             finally
             {
-                busHandle.Stop(TimeSpan.FromSeconds(30));
+                busControl.Stop();
             }
         }
 
