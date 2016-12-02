@@ -8,6 +8,7 @@
     using log4net.Config;
     using MassTransit;
     using MassTransit.Log4NetIntegration.Logging;
+    using MassTransit.Util;
     using Sample.MessageTypes;
 
 
@@ -22,7 +23,7 @@
 
             IBusControl busControl = CreateBus();
 
-            busControl.Start();
+            TaskUtil.Await(() => busControl.StartAsync());
 
             try
             {

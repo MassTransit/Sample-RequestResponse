@@ -4,6 +4,7 @@
     using System.Configuration;
     using MassTransit;
     using MassTransit.RabbitMqTransport;
+    using MassTransit.Util;
     using Topshelf;
     using Topshelf.Logging;
 
@@ -33,7 +34,7 @@
 
             _log.Info("Starting bus...");
 
-            _busControl.Start();
+            TaskUtil.Await(() => _busControl.StartAsync());
 
             return true;
         }
