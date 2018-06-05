@@ -5,3 +5,8 @@ This sample shows a very simple service which handles a request and responds. Th
 ## Requirements
 
 This sample using .NET 4.5, MassTransit 3, and RabbitMQ.
+
+The sample is configured having the following assumptions in mind:
+ 1. RabbitMQ is available on localhost
+ 2. Default RMQ credentials (guest/guest) can be used
+ 3. There is a virtual host `test`, to which the `guest` user has full access
